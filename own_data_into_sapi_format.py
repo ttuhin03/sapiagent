@@ -15,6 +15,8 @@ os.makedirs(csv_output_folder_path, exist_ok=True)
 user_counter = 1
 
 # Alle JSON-Dateien im Ordner durchlaufen
+anzahkSkips = 0
+anzahlPC = 0
 for filename in os.listdir(json_folder_path):
     if filename.endswith('.json'):
         json_file_path = os.path.join(json_folder_path, filename)
@@ -23,6 +25,16 @@ for filename in os.listdir(json_folder_path):
         with open(json_file_path, 'r') as json_file:
             data = json.load(json_file)
         
+        
+        if "Android" in data["userAgent"] or "iPhone" in data["userAgent"]:
+            anzahkSkips += 1
+            continue
+
+        if "Windows" in data["userAgent"] or "Macintosh" in data["userAgent"]:
+            anzahlPC += 1
+
+
+
         # Den ersten Zeitstempel als Startzeitpunkt festlegen
         start_timestamp = data['mouseEvents'][0]['timestamp']
         
@@ -68,4 +80,6 @@ for filename in os.listdir(json_folder_path):
         # Benutzerzähler erhöhen
         user_counter += 1
 
+print(f"Anzahl der Skips: {anzahkSkips}")
+print(f"Anzahl der PC: {anzahlPC}")
 print("Alle Mouse events wurden erfolgreich konvertiert und gespeichert.")
