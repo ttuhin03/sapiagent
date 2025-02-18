@@ -11,7 +11,7 @@ class ActionType(Enum):
 
 
 class SessionType(Enum):
-    #MIN1 = '1min'
+    MIN1 = '1min'
     MIN3 = '3min'
 
 

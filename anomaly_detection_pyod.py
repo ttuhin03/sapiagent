@@ -131,13 +131,12 @@ def main():
         # evaluate the model with human data
         positive_scores = clf.decision_function(human_test)
         ps = list()
+        # Compute moving average
         for i in range(0, len(positive_scores) - num_scores + 1):
             sum_scores = 0
             for j in range(i, i + num_scores):
-                sum_scores = sum_scores + positive_scores[j]
+                sum_scores += positive_scores[j]
             ps.append(sum_scores / num_scores)
-        positive_scores = np.array(ps)
-        
         auc_list = []
         eer_list = []
         # for each synthetic test data

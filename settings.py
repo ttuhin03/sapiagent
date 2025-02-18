@@ -7,7 +7,7 @@ RANDOM_STATE = 11235
 
 # Model parameters
 BATCH_SIZE = 32
-EPOCHS = 100
+EPOCHS = 5 #original: 100
 
 # Temporary filename - used to save ROC curve data
 TEMP_NAME = "scores.csv"
@@ -19,14 +19,14 @@ DIMENSIONS = 2
 # Other parameters
 TRAINING = True
 # 'fcn', 'bidirectional'
-KEY = "fcn"
+KEY = "bidirectional"
 # 'mse' 'custom'
 LOSS = "mse"
 
 SUFFIX = "dx_dy"
 
 
-# 'supervised', 'supervised'
+# 'supervised', 'unsupervised'
 TRAINING_TYPE = "unsupervised"
 OUTPUT_PNG = OUTPUT_FIGURES + "/" + KEY + "_" + SUFFIX + "_" + LOSS + "_" + TRAINING_TYPE
 

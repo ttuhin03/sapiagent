@@ -14,3 +14,4 @@ sapimouse_actions/
 TRAINED_MODELS/
 TRAINING_CURVES/
 __pycache__/
+sapivenv/

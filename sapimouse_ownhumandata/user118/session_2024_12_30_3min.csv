@@ -1,0 +1,7 @@
+client timestamp,button,state,x,y
+0,NoButton,Move,143,246
+34,LeftButton,Pressed,143,246
+35,LeftButton,Released,143,246
+737,NoButton,Move,866,514
+737,LeftButton,Pressed,866,514
+738,LeftButton,Released,866,514
