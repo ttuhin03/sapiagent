@@ -9,7 +9,7 @@ generated_actions/
 output_png/
 output_roc_data/
 output_scores/
-sapimouse/
+
 sapimouse_actions/
 TRAINED_MODELS/
 TRAINING_CURVES/
