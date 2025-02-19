@@ -474,24 +474,47 @@ test_anomaly_df = df_anomaly
 
 # a) Identify the columns you actually want to train on
 #    (Exclude chunk_id or any label column.)
-feature_cols = ['geschwindigkeit', 'geschwindigkeit_min',
-       'geschwindigkeit_max', 'geschwindigkeit_mean', 'geschwindigkeit_var',
-       'dauer', 'direkte_distanz', 'effizienz', 'totale_distanz',
-       'smoothness_v1', 'smoothness_v2', 'beschleunigung_min',
-       'beschleunigung_max', 'beschleunigung_mean', 'beschleunigung_var',
-       'geschwindigkeit_zscore', 'geschwindigkeit_min_zscore',
-       'geschwindigkeit_max_zscore', 'geschwindigkeit_mean_zscore',
-       'geschwindigkeit_var_zscore', 'beschleunigung_min_zscore',
-       'beschleunigung_max_zscore', 'beschleunigung_mean_zscore',
-       'beschleunigung_var_zscore', 'dauer_zscore', 'direkte_distanz_zscore',
-       'effizienz_zscore', 'totale_distanz_zscore', 'smoothness_v1_zscore',
-       'smoothness_v2_zscore', 'geschwindigkeit_minmax',
+
+#['geschwindigkeit', 'geschwindigkeit_min',
+ #      'geschwindigkeit_max', 'geschwindigkeit_mean', 'geschwindigkeit_var',
+  #     'dauer', 'direkte_distanz', 'effizienz', 'totale_distanz',
+   #    'smoothness_v1', 'smoothness_v2', 'beschleunigung_min',
+    #   'beschleunigung_max', 'beschleunigung_mean', 'beschleunigung_var',
+    #   'geschwindigkeit_zscore', 'geschwindigkeit_min_zscore',
+    #   'geschwindigkeit_max_zscore', 'geschwindigkeit_mean_zscore',
+    #   'geschwindigkeit_var_zscore', 'beschleunigung_min_zscore',
+     ##  'beschleunigung_max_zscore', 'beschleunigung_mean_zscore',
+      # 'beschleunigung_var_zscore', 'dauer_zscore', 'direkte_distanz_zscore',
+  #     'effizienz_zscore', 'totale_distanz_zscore', 'smoothness_v1_zscore',
+ #      'smoothness_v2_zscore', 'geschwindigkeit_minmax',
+   #    'geschwindigkeit_min_minmax', 'geschwindigkeit_max_minmax',
+    #   'geschwindigkeit_mean_minmax', 'geschwindigkeit_var_minmax',
+    #   'beschleunigung_min_minmax', 'beschleunigung_max_minmax',
+    #   'beschleunigung_mean_minmax', 'beschleunigung_var_minmax',
+    #   'dauer_minmax', 'direkte_distanz_minmax', 'effizienz_minmax',
+    #   'totale_distanz_minmax', 'smoothness_v1_minmax', 'smoothness_v2_minmax',
+    #   ]
+
+
+feature_cols = [#'geschwindigkeit', 'geschwindigkeit_min',
+       #'geschwindigkeit_max', 'geschwindigkeit_mean', 'geschwindigkeit_var',
+       #'dauer', 'direkte_distanz', 'effizienz', 'totale_distanz',
+       #'smoothness_v1', 'smoothness_v2', 'beschleunigung_min',
+       #'beschleunigung_max', 'beschleunigung_mean', 'beschleunigung_var',
+       #'geschwindigkeit_zscore', 'geschwindigkeit_min_zscore',
+       #'geschwindigkeit_max_zscore', 'geschwindigkeit_mean_zscore',
+       #'geschwindigkeit_var_zscore', 'beschleunigung_min_zscore',
+       #'beschleunigung_max_zscore', 'beschleunigung_mean_zscore',
+       #'beschleunigung_var_zscore', 'dauer_zscore', 'direkte_distanz_zscore',
+       #'effizienz_zscore', 'totale_distanz_zscore', 'smoothness_v1_zscore',
+       #'smoothness_v2_zscore'
+        'geschwindigkeit_minmax',
        'geschwindigkeit_min_minmax', 'geschwindigkeit_max_minmax',
        'geschwindigkeit_mean_minmax', 'geschwindigkeit_var_minmax',
        'beschleunigung_min_minmax', 'beschleunigung_max_minmax',
        'beschleunigung_mean_minmax', 'beschleunigung_var_minmax',
        'dauer_minmax', 'direkte_distanz_minmax', 'effizienz_minmax',
-       'totale_distanz_minmax', 'smoothness_v1_minmax', 'smoothness_v2_minmax',
+       'totale_distanz_minmax', 'smoothness_v1_minmax'#, 'smoothness_v2_minmax',
        ]
 
 # Extract train features
@@ -565,9 +588,9 @@ fn_rows = test_indices[fn_idx]
 tp_rows = test_indices[tp_idx]
 
 print("\nRow Indices:")
-print("False Anomaly (FP):", fp_rows.tolist())
-print("False Normal  (FN):", fn_rows.tolist())
-print("True Anomaly  (TP):", tp_rows.tolist())
+print("False Anomaly (FP):", sorted(fp_rows.tolist()))
+print("False Normal  (FN):", sorted(fn_rows.tolist()))
+#print("True Anomaly  (TP):", tp_rows.tolist().sort())
 
 
 import numpy as np
@@ -640,3 +663,5 @@ fig.update_layout(
 )
 
 fig.show()
+
+
