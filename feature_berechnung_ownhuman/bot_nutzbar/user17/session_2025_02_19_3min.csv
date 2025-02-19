@@ -1,0 +1,20 @@
+client timestamp,button,state,x,y
+0,NoButton,Move,640,210
+20,NoButton,Move,640,211
+39,NoButton,Move,640,213
+57,NoButton,Move,640,214
+75,NoButton,Move,640,216
+94,NoButton,Move,640,217
+112,NoButton,Move,640,218
+130,NoButton,Move,640,220
+148,NoButton,Move,640,221
+167,NoButton,Move,640,223
+187,NoButton,Move,640,224
+205,NoButton,Move,640,225
+223,NoButton,Move,640,227
+243,NoButton,Move,640,228
+246,LeftButton,Pressed,640,228
+247,LeftButton,Released,640,228
+868,NoButton,Move,994,489
+868,LeftButton,Pressed,994,489
+870,LeftButton,Released,994,489
